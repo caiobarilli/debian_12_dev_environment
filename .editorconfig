@@ -1,0 +1,16 @@
+# Top-most EditorConfig file
+root = true
+
+# Indentation
+[*]
+indent_style = space
+indent_size = 4
+
+# Line endings
+[*.{sh,bash}]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+
+# Insert final newline
+insert_final_newline = true
