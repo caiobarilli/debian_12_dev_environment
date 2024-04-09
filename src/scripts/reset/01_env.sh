@@ -1,11 +1,14 @@
 #!/bin/bash
 
-echo "Uninstalling packages installed by setup script..."
+# User
+. ./src/scripts/utils/user.sh
 
-# Remove o figlet
-apt remove --purge figlet -y > /dev/null 2>&1
+# Remove o diretório .ssh
+if [ -d "$ssh_dir" ]; then
+    rm -rf "$ssh_dir"
+fi
 
-echo "Uninstalling figlet..."
+echo "Deleting .ssh directory..."
 
 wait
 

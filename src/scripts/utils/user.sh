@@ -10,7 +10,7 @@ fi
 # Diretório de armazenamento de chaves SSH
 user_home="/home/$user_name"
 ssh_dir="$user_home/.ssh"
-mkdir -p "$ssh_dir"
+[ ! -d "$ssh_dir" ] && mkdir -p "$ssh_dir"
 
 # Caminho completo para a chave SSH
 ssh_key_path="$ssh_dir/id_rsa"

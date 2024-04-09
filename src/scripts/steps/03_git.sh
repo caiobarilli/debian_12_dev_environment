@@ -43,11 +43,21 @@ echo "SSH key added to known_hosts."
 log "SSH key added to known_hosts."
 
 # Definir permissões para o diretório .ssh
+echo "Setting permissions for $ssh_key_path..."
 chmod 600 "$ssh_key_path" > /dev/null 2>&1
+
+echo "Setting permissions for $ssh_dir..."
 chmod 700 "$ssh_dir" > /dev/null 2>&1
+
+echo "Setting permissions for $ssh_dir/known_hosts..."
 chmod 600 "$ssh_dir/known_hosts" > /dev/null 2>&1
+
+echo "Changing owner to $user_name for $ssh_dir..."
 chown -R $user_name $ssh_dir > /dev/null 2>&1
+
+echo "Changing group to $user_name for $ssh_dir..."
 chgrp -R $user_name $ssh_dir > /dev/null 2>&1
+
 echo "Permissions set for $ssh_dir."
 log "Permissions set for $ssh_dir."
 
@@ -68,19 +78,15 @@ echo "Git installed and configured successfully."
 echo ""
 
 if [ "$existing_ssh" = "no" ]; then
-
     figlet -f term "==============================="
     figlet -f term "Copy the SSH public key below:"
     figlet -f term "==============================="
-
     echo ""
     echo $(cat "$ssh_key_path.pub")
-
     echo ""
     figlet -f term "Please add the following SSH public key to your GitHub account:"
     figlet -f term "You can add it to GitHub by visiting https://github.com/settings/keys"
     echo ""
-
 fi
 
 # Registro final no log

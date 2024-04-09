@@ -5,10 +5,10 @@ storage_folder="./storage/"
 keys_folder="./storage/keys/"
 vars_folder="./storage/vars/"
 
-if [ ! -f "$storage_folder" ]; then
+if [ ! -d "$storage_folder" ]; then
     mkdir -p "$storage_folder"
     mkdir -p "$keys_folder"
-    chmod 777 "$keys_folder"
+    chmod 700 "$keys_folder"
     mkdir -p "$vars_folder"
 fi
 

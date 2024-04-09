@@ -2,7 +2,7 @@
 
 # Logs
 logs_folder="./logs/"
-if [ ! -f "$logs_folder" ]; then
+if [ ! -d "$logs_folder" ]; then
     mkdir -p "$logs_folder"
 fi
 

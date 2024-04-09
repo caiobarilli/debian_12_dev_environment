@@ -3,7 +3,7 @@
 # Log
 . ./src/scripts/utils/logs.sh
 
-# User home
+# User
 . ./src/scripts/utils/user.sh
 
 # Ler as variáveis do arquivo
@@ -41,7 +41,7 @@ if [ "$existing_ssh" = "no" ]; then
         log "SSH key created with passphrase."
 
         eval "$(ssh-agent -s)"
-        echo "$passphrase" | ssh-add -K "$ssh_key_path" < /dev/null
+        echo "$passphrase" | ssh-add "$ssh_key_path" < /dev/null
         echo "SSH key added to ssh-agent."
 
     fi

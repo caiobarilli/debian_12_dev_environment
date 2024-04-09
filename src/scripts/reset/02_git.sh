@@ -1,18 +1,11 @@
 #!/bin/bash
 
-# Remove o diretório .ssh
-if [ "$EUID" -eq 0 ]; then
-    user_name="$SUDO_USER"
-else
-    user_name="$USER"
-fi
+echo "Uninstalling packages installed by setup script..."
 
-user_home="/home/$user_name"
-ssh_dir="$user_home/.ssh"
+# Remove o figlet
+apt remove --purge figlet -y > /dev/null 2>&1
 
-rm -rf "$ssh_dir"
-
-echo "Deleting .ssh directory..."
+echo "Uninstalling figlet..."
 
 wait
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "generating user variables..."
+echo ""
+
 echo "==================="
 echo " GIT CONFIGURATION "
 echo "==================="

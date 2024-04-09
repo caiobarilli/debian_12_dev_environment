@@ -1,28 +1,28 @@
 #!/bin/bash
 
-# clear
+clear
 
 # Log
 
 . ./src/scripts/utils/logs.sh
 
-# Setup requirements
-
-echo "Installing required packages..."
-
-apt update > /dev/null 2>&1
-
+# Update package list and upgrade installed packages
+echo "Updating package list..."
 log "Updating package list..."
-
+apt update > /dev/null 2>&1
+echo "Upgrading installed packages..."
+log "Upgrading installed packages..."
 apt upgrade -y > /dev/null 2>&1
 
-log "Upgrading installed packages..."
+# Initial setup
+echo "Installing required packages..."
+log "Installing required packages..."
 
 # Install figlet
-
-apt install figlet -y > /dev/null 2>&1
-
-log "Installing figlet..."
+if ! command -v figlet &> /dev/null; then
+    apt install figlet -y > /dev/null 2>&1
+    log "Installing figlet..."
+fi
 
 wait
 
