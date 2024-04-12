@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# Log
-. ./src/scripts/utils/logs.sh
+# Remove a pasta logs
+rm -rf ./logs
 
-# Remove os arquivos de variáveis
+echo "Deleting log files..."
 
-rm -rf ./storage/vars/*
+wait
 
-log "Deleting variable files..."
+# Remove a pasta storage
+rm -rf ./storage
+
+echo "Deleting storage files..."
 
 wait
 
 # Remove o figlet
-
 apt remove --purge figlet -y > /dev/null 2>&1
 
-log "Uninstalling figlet..."
+echo "Uninstalling figlet..."
 
 wait
-
-echo "Ends script execution."

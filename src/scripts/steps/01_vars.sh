@@ -7,9 +7,9 @@ vars_folder="./storage/vars/"
 
 if [ ! -d "$storage_folder" ]; then
     mkdir -p "$storage_folder"
-    mkdir -p "$keys_folder"
-    chmod 700 "$keys_folder"
     mkdir -p "$vars_folder"
+    mkdir -p "$keys_folder"
+    chmod 777 "$keys_folder"
 fi
 
 # User vars

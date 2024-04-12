@@ -10,15 +10,20 @@ Script de automação para instalação de ambiente de desenvolvimento no Debian
 debian_12_dev_enviroment/
 ├── src/
 │   │── scripts/
+│   │   ├── menus/
+│   │   │   ├── main_menu.sh
+│   │   │   └── manual_installation.sh
 │   │   ├── prepare/
-│   │   │   ├── 01_setup_requirements.sh
+│   │   │   └── 01_setup_requirements.sh
 │   │   ├── reset/
 │   │   │   ├── 01_env.sh
-│   │   │   └── 02_git.sh
+│   │   │   ├── 02_ssh.sh
+│   │   │   └── 03_git.sh
 │   │   └── steps/
-│   │       ├── 01_ssh.sh
-│   │       ├── 02_git.sh
-│   │       └── 03_ends.sh
+│   │       ├── 01_vars.sh
+│   │       ├── 02_ssh.sh
+│   │       ├── 03_git.sh
+│   │       └── 04_ends.sh
 │   └── main.sh
 ├── logs/
 │   └── debian_12_dev_enviroment.log
@@ -26,11 +31,12 @@ debian_12_dev_enviroment/
 │   ├── vars/
 │   │   └── user_vars
 │   └── keys/
-│       ├── my_private_key
-│       └── my_public_key.pub
-├── README.md
+│       └── my_keys
+│           ├── my_private_key
+│           └── my_public_key.pub
 │── .gitignore
 │── .editorconfig
+├── README.md
 │── generate.sh
 └── run.sh
 ```
