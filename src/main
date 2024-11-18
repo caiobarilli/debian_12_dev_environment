@@ -1,0 +1,29 @@
+#!/bin/bash
+
+clear
+
+# Função para instalar
+install() {
+    log "Starting auto-installation..."
+
+    bash ./src/setup/env
+    bash ./src/setup/ssh
+    bash ./src/setup/git
+    bash ./src/setup/finish
+
+    log "Installation completed successfully."
+}
+
+# Função para desinstalar
+uninstall() {
+    log "Starting uninstallation..."
+
+    bash ./src/uninstall/env
+    bash ./src/uninstall/ssh
+    bash ./src/uninstall/git
+
+    log "Uninstallation completed successfully."
+}
+
+# Importando o menu principal
+. ./src/menus/main_menu

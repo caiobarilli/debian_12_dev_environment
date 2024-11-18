@@ -1,0 +1,5 @@
+username="user"
+email="user@user"
+ssh_key_folder=""
+existing_ssh="no"
+passphrase=""
